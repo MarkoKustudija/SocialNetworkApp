@@ -1,0 +1,17 @@
+
+<div class="row my-4 g-0">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div *ngIf="loggedIn">
+            <button class="btn btn-outline-dark btn-sm btn-block ms-2" [routerLink]="['/add']">Add Post</button>
+        </div>
+        <div class="list-group">
+            <a *ngFor="let post of posts" class="list-group-item list-group-item-action flex-column align-items-start my-3 border border-danger">
+              <app-post [post]="post" [routerLink]="['/post',post.id]" (click)="viewPost(post)"></app-post>
+              <button class="btn btn-success" *ngIf="loggedIn" [routerLink]="['/add-comment']" (click)="setPostForComment(post.id)">Comment</button>
+            </a>
+          </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+  

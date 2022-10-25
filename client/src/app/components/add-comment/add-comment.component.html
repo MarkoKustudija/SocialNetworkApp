@@ -1,0 +1,15 @@
+<form (ngSubmit)="addComment()" class="col-4 bg-light">
+  <div class="form-group">
+    <label for="input-content">Write you comment down here</label>
+    <textarea
+      name="input-content"
+      class="form-control"
+      id="input-content"
+      [(ngModel)]="newComment.content"
+    >
+    </textarea
+    ><br />
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-block">Submit</button>
+</form>
